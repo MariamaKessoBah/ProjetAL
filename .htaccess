@@ -1,0 +1,17 @@
+#-----------------------------------------
+#  config
+#-----------------------------------------
+
+# Le serveur doit suivre les liens symboliques:
+Options +FollowSymlinks
+
+# Activation du module reécriture d'utilisateur
+
+RewriteEngine On
+
+#-----------------------------------------
+# Régles de reécriture d'utilisateur
+#-----------------------------------------
+
+RewriteCond "%{REQUEST_URL}" "categorie"
+RewriteRule "categorie/([0-9]+)"  "controller.php?categorie&id=$1" 
